@@ -4,12 +4,8 @@
 public class CountingSort implements SortingAlgorithm {
     @Override
     public int[] sort(int[] array) {
-        // Take care of case when already sorted. We can guarantee we have at least 2 elements.
-        if (array.length < 2)
-            return array;
-
         // Generate indexArray -- to hold counts
-        int maxVal = array[0];
+        int maxVal = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > maxVal)
                 maxVal = array[i];
